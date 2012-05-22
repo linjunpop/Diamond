@@ -13,6 +13,7 @@
 @property NSMutableArray *users;
 
 - (IBAction)refresh:(id)sender;
+
 - (Boolean)fetch;
 
 @end
