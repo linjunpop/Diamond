@@ -65,11 +65,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:nil];
     }
     
-    cell.textLabel.text = [[self.topics objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSDictionary *topicInfo = [self.topics objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [topicInfo objectForKey:@"title"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"User: %@ -- Node: %@",
+                                 [[topicInfo objectForKey:@"user"] objectForKey:@"login"],
+                                 [topicInfo objectForKey:@"node_name"]];
     
     return cell;
 }
