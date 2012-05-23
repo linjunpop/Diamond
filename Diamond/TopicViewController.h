@@ -13,6 +13,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *topics;
 
-- (IBAction)refresh:(id)sender;
-
 @end

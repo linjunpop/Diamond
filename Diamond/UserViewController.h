@@ -12,6 +12,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *users;
 
-- (IBAction)refresh:(id)sender;
-
 @end
