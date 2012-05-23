@@ -10,6 +10,8 @@
 
 @interface TopicViewController ()
 
+- (Boolean) fetch;
+
 @end
 
 @implementation TopicViewController

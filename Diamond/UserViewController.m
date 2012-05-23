@@ -10,6 +10,8 @@
 
 @interface UserViewController ()
 
+- (Boolean) fetch;
+
 @end
 
 @implementation UserViewController
