@@ -80,11 +80,17 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    [self setTopics:[TopicModel all]];
-     
-    if ([self topics]) {
-        [self.tableView reloadData];
-    }
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self setTopics:[TopicModel all]];
+
+        dispatch_async( dispatch_get_main_queue(), ^{
+            // Add code here to update the UI/send notifications based on the
+            // results of the background processing
+            if ([self topics]) {
+                [self.tableView reloadData];
+            }
+        });
+    });
 }
 
 @end

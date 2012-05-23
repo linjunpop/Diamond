@@ -142,16 +142,11 @@
 				5D21E600156B6E9D00A0D042 /* second.png */,
 				5D21E602156B6E9D00A0D042 /* second@2x.png */,
 				5D21E5E8156B6E9D00A0D042 /* Supporting Files */,
-				5D21E62A156B86EA00A0D042 /* UserViewController.h */,
-				5D21E62B156B86EA00A0D042 /* UserViewController.m */,
-				5D602F49156C720800135F5A /* TopicViewController.h */,
-				5D602F4A156C720800135F5A /* TopicViewController.m */,
+				5DBEAD71156CCD0C003B639C /* Controllers */,
 				5DFA45A6156C9ADC002059D9 /* UserModel.h */,
 				5DFA45A7156C9ADC002059D9 /* UserModel.m */,
 				5DFA45AA156CB58B002059D9 /* TopicModel.h */,
 				5DFA45AB156CB58B002059D9 /* TopicModel.m */,
-				5DFA45AD156CB919002059D9 /* NodeViewController.h */,
-				5DFA45AE156CB919002059D9 /* NodeViewController.m */,
 				5DFA45B0156CBA36002059D9 /* NodeModel.h */,
 				5DFA45B1156CBA36002059D9 /* NodeModel.m */,
 			);
@@ -186,6 +181,19 @@
 				5D21E613156B6E9E00A0D042 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DBEAD71156CCD0C003B639C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D21E62A156B86EA00A0D042 /* UserViewController.h */,
+				5D21E62B156B86EA00A0D042 /* UserViewController.m */,
+				5D602F49156C720800135F5A /* TopicViewController.h */,
+				5D602F4A156C720800135F5A /* TopicViewController.m */,
+				5DFA45AD156CB919002059D9 /* NodeViewController.h */,
+				5DFA45AE156CB919002059D9 /* NodeViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

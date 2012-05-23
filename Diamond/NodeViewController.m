@@ -75,11 +75,17 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    [self setNodes:[NodeModel all]];
-    
-    if ([self nodes]) {
-        [self.tableView reloadData];
-    }
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self setNodes:[NodeModel all]];
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            // Add code here to update the UI/send notifications based on the
+            // results of the background processing
+            if ([self nodes]) {
+                [self.tableView reloadData];
+            }
+        });
+    });
 }
 
 @end
