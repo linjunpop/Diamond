@@ -14,6 +14,4 @@
 
 - (IBAction)refresh:(id)sender;
 
-- (Boolean)fetch;
-
 @end

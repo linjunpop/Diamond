@@ -14,6 +14,5 @@
 @property NSMutableArray *topics;
 
 - (IBAction)refresh:(id)sender;
-- (Boolean) fetch;
 
 @end
