@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicModel.h"
 
 @interface TopicViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

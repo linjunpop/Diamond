@@ -12,8 +12,6 @@
 
 @property (nonatomic) NSMutableArray *topics;
 
-- (BOOL) fetch;
-
 @end
 
 @implementation TopicViewController
@@ -79,29 +77,11 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    if ([self fetch]) {
+    [self setTopics:[TopicModel all]];
+     
+    if ([self topics]) {
         [self.tableView reloadData];
     }
 }
 
-- (BOOL)fetch {
-    NSString* strUrl=@"http://ruby-china.org/api/topics";
-    
-    NSURL *url=[NSURL URLWithString:strUrl];
-	NSMutableURLRequest  *request=[[NSMutableURLRequest alloc] initWithURL:url];      
-    NSError *err=nil;    
-    NSData *jsonData=[NSURLConnection sendSynchronousRequest:request
-                                           returningResponse:nil
-                                                       error:&err];
-    
-    NSError *e = nil;
-    [self setTopics:[NSJSONSerialization JSONObjectWithData: jsonData
-                                                    options: NSJSONReadingMutableContainers
-                                                      error: &e]];
-    if([self topics]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
 @end

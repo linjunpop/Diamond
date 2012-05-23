@@ -12,8 +12,6 @@
 
 @property (nonatomic) NSMutableArray *users;
 
-- (BOOL) fetch;
-
 @end
 
 @implementation UserViewController
@@ -79,29 +77,11 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    if ([self fetch]) {
+    [self setUsers:[UserModel all]];
+
+    if ([self users]) {
         [self.tableView reloadData];
     }
 }
 
-- (BOOL)fetch {
-    NSString* strUrl=@"http://ruby-china.org/api/users"; //it return json format string
-    
-    NSURL *url=[NSURL URLWithString:strUrl];
-	NSMutableURLRequest  *request=[[NSMutableURLRequest alloc] initWithURL:url];      
-    NSError *err=nil;    
-    NSData *jsonData=[NSURLConnection sendSynchronousRequest:request
-                                           returningResponse:nil
-                                                       error:&err];
-    
-    NSError *e = nil;
-    [self setUsers:[NSJSONSerialization JSONObjectWithData: jsonData
-                                                   options: NSJSONReadingMutableContainers
-                                                     error: &e]];
-    if([self users]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
 @end
