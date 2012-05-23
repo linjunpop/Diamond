@@ -24,6 +24,7 @@
 		5D21E615156B6E9E00A0D042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D21E613156B6E9E00A0D042 /* InfoPlist.strings */; };
 		5D21E618156B6E9E00A0D042 /* DiamondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E617156B6E9E00A0D042 /* DiamondTests.m */; };
 		5D21E62C156B86EA00A0D042 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E62B156B86EA00A0D042 /* UserViewController.m */; };
+		5D602F4B156C720800135F5A /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D602F4A156C720800135F5A /* TopicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		5D21E617156B6E9E00A0D042 /* DiamondTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondTests.m; sourceTree = "<group>"; };
 		5D21E62A156B86EA00A0D042 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		5D21E62B156B86EA00A0D042 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		5D602F49156C720800135F5A /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		5D602F4A156C720800135F5A /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				5D21E5E8156B6E9D00A0D042 /* Supporting Files */,
 				5D21E62A156B86EA00A0D042 /* UserViewController.h */,
 				5D21E62B156B86EA00A0D042 /* UserViewController.m */,
+				5D602F49156C720800135F5A /* TopicViewController.h */,
+				5D602F4A156C720800135F5A /* TopicViewController.m */,
 			);
 			path = Diamond;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				5D21E5EE156B6E9D00A0D042 /* main.m in Sources */,
 				5D21E5F2156B6E9D00A0D042 /* AppDelegate.m in Sources */,
 				5D21E62C156B86EA00A0D042 /* UserViewController.m in Sources */,
+				5D602F4B156C720800135F5A /* TopicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
