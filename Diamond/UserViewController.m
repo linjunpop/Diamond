@@ -93,9 +93,9 @@
                                                        error:&err];
     
     NSError *e = nil;
-    self.users = [NSJSONSerialization JSONObjectWithData: jsonData
-                                                     options: NSJSONReadingMutableContainers
-                                                       error: &e];
+    [self setUsers:[NSJSONSerialization JSONObjectWithData: jsonData
+                                                   options: NSJSONReadingMutableContainers
+                                                     error: &e]];
     if(self.users) {
         return true;
     } else {

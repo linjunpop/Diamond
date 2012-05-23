@@ -93,9 +93,9 @@
                                                        error:&err];
     
     NSError *e = nil;
-    self.topics = [NSJSONSerialization JSONObjectWithData: jsonData
-                                                 options: NSJSONReadingMutableContainers
-                                                   error: &e];
+    [self setTopics:[NSJSONSerialization JSONObjectWithData: jsonData
+                                                    options: NSJSONReadingMutableContainers
+                                                      error: &e]];
     if(self.topics) {
         return true;
     } else {
