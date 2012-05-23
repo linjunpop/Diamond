@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="-412" y="314"/>
         </scene>
-        <!--User View Controller - Users-->
+        <!--Users View Controller - Users-->
         <scene sceneID="aiV-z6-lxb">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr3-CO-mKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="UDE-YE-q4a" customClass="UserViewController" sceneMemberID="viewController">
+                <viewController id="UDE-YE-q4a" customClass="UsersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l8P-9K-RrO">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="191" y="149"/>
         </scene>
-        <!--Topic View Controller - Topics-->
+        <!--Topics View Controller - Topics-->
         <scene sceneID="ho1-jT-mK0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgT-5c-yOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="bC9-zh-NeD" customClass="TopicViewController" sceneMemberID="viewController">
+                <viewController id="bC9-zh-NeD" customClass="TopicsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zbF-GO-dwn">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,11 +106,11 @@
             </objects>
             <point key="canvasLocation" x="191" y="771"/>
         </scene>
-        <!--Node View Controller - Nodes-->
+        <!--Nodes View Controller - Nodes-->
         <scene sceneID="Oii-Pr-106">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwP-Sr-sDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="24a-I9-E4s" customClass="NodeViewController" sceneMemberID="viewController">
+                <viewController id="24a-I9-E4s" customClass="NodesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9s-QT-SnU">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,27 +146,21 @@
             </objects>
             <point key="canvasLocation" x="192" y="1363"/>
         </scene>
+        <!--Topic Detail View Controller-->
+        <scene sceneID="neE-di-V4P">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-a1-48M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="OR6-01-NYw" customClass="TopicDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1C9-ic-n20">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="541" y="1233"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="NodeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NodeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="TopicViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopicViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
