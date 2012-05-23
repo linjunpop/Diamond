@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UserViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *users;
 
 - (IBAction)refresh:(id)sender;

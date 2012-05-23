@@ -13,6 +13,7 @@
 @end
 
 @implementation UserViewController
+
 @synthesize tableView = _tableView;
 @synthesize users = _users;
 
@@ -74,7 +75,7 @@
 }
 
 - (IBAction)refresh:(id)sender {
-    if (self.fetch) {
+    if ([self fetch]) {
         [self.tableView reloadData];
     }
 }
