@@ -56,7 +56,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.topics count];
+    return [[self topics] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,7 +96,7 @@
     [self setTopics:[NSJSONSerialization JSONObjectWithData: jsonData
                                                     options: NSJSONReadingMutableContainers
                                                       error: &e]];
-    if(self.topics) {
+    if([self topics]) {
         return true;
     } else {
         return false;
