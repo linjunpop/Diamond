@@ -69,9 +69,7 @@
                                       reuseIdentifier:nil];
     }
     
-    NSDictionary *userInfo = [self.nodes objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [userInfo objectForKey:@"name"];
+    cell.textLabel.text = [[self.nodes objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;
 }
