@@ -10,7 +10,9 @@
 
 @interface TopicViewController ()
 
-- (Boolean) fetch;
+@property (nonatomic) NSMutableArray *topics;
+
+- (BOOL) fetch;
 
 @end
 
@@ -82,7 +84,7 @@
     }
 }
 
-- (Boolean)fetch {
+- (BOOL)fetch {
     NSString* strUrl=@"http://ruby-china.org/api/topics";
     
     NSURL *url=[NSURL URLWithString:strUrl];
@@ -97,9 +99,9 @@
                                                     options: NSJSONReadingMutableContainers
                                                       error: &e]];
     if([self topics]) {
-        return true;
+        return YES;
     } else {
-        return false;
+        return NO;
     }
 }
 @end

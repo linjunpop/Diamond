@@ -10,6 +10,5 @@
 
 @interface UserViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *users;
 
 @end

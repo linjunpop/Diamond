@@ -11,6 +11,5 @@
 @interface TopicViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *topics;
 
 @end

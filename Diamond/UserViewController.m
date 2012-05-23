@@ -10,7 +10,9 @@
 
 @interface UserViewController ()
 
-- (Boolean) fetch;
+@property (nonatomic) NSMutableArray *users;
+
+- (BOOL) fetch;
 
 @end
 
@@ -82,7 +84,7 @@
     }
 }
 
-- (Boolean)fetch {
+- (BOOL)fetch {
     NSString* strUrl=@"http://ruby-china.org/api/users"; //it return json format string
     
     NSURL *url=[NSURL URLWithString:strUrl];
@@ -97,9 +99,9 @@
                                                    options: NSJSONReadingMutableContainers
                                                      error: &e]];
     if([self users]) {
-        return true;
+        return YES;
     } else {
-        return false;
+        return NO;
     }
 }
 @end
