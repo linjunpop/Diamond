@@ -13,6 +13,8 @@
 @end
 
 @implementation TopicDetailsViewController
+@synthesize textView = _textView;
+@synthesize bodyText = _bodyText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,10 +29,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[self textView] setEditable:NO];
+    [[self textView] setText:[self bodyText]];
 }
 
 - (void)viewDidUnload
 {
+    [self setTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

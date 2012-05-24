@@ -10,4 +10,7 @@
 
 @interface TopicDetailsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) NSString *bodyText;
+
 @end

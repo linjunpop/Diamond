@@ -7,6 +7,7 @@
 //
 
 #import "TopicsViewController.h"
+#import "TopicDetailsViewController.h"
 
 @interface TopicsViewController ()
 
@@ -87,9 +88,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue identifier] isEqualToString:@"showTopicDetails"]) {
-//        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-//        UIViewController *topicDetailViewController = [segue destinationViewController];
-//        topicDetailViewController.htmlString = @"<h1>HI</h1>";
+        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+        NSDictionary *topicInfo = [self.topics objectAtIndex:selectedRowIndex.row];
+        TopicDetailsViewController *topicDetailViewController = [segue destinationViewController];
+        [topicDetailViewController setBodyText:[topicInfo objectForKey:@"body"]];
     }
 }
 
