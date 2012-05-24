@@ -13,6 +13,8 @@
 
 @property (nonatomic) NSMutableArray *topics;
 
+- (void)reloadTopics;
+
 @end
 
 @implementation TopicsViewController
@@ -35,6 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self reloadTopics];
 }
 
 - (void)viewDidUnload
@@ -96,9 +99,15 @@
 }
 
 - (IBAction)refresh:(id)sender {
+    [self reloadTopics];
+}
+
+#pragma mark - Private Methods
+
+- (void) reloadTopics {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setTopics:[TopicModel all]];
-
+        
         dispatch_async( dispatch_get_main_queue(), ^{
             // Add code here to update the UI/send notifications based on the
             // results of the background processing

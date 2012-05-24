@@ -12,6 +12,8 @@
 
 @property (nonatomic) NSMutableArray *nodes;
 
+- (void)reloadNodes;
+
 @end
 
 @implementation NodesViewController
@@ -34,6 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self reloadNodes];
 }
 
 - (void)viewDidUnload
@@ -75,6 +78,12 @@
 }
 
 - (IBAction)refresh:(id)sender {
+    [self reloadNodes];
+}
+
+#pragma mark - Private Methods
+
+- (void) reloadNodes {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setNodes:[NodeModel all]];
         

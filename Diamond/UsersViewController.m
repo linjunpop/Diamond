@@ -12,6 +12,8 @@
 
 @property (nonatomic) NSMutableArray *users;
 
+- (void)reloadUsers;
+
 @end
 
 @implementation UsersViewController
@@ -34,6 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self reloadUsers];
 }
 
 - (void)viewDidUnload
@@ -75,6 +78,12 @@
 }
 
 - (IBAction)refresh:(id)sender {
+    [self reloadUsers];
+}
+
+#pragma mark - Private Methods
+
+- (void)reloadUsers {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setUsers:[UserModel all]];
         
