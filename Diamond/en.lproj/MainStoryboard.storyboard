@@ -18,25 +18,25 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="UDE-YE-q4a" kind="relationship" relationship="viewControllers" id="Tcm-n8-oL9"/>
+                        <segue destination="45a-ek-Kg9" kind="relationship" relationship="viewControllers" id="Tcm-n8-oL9"/>
                         <segue destination="9C8-CS-4nj" kind="relationship" relationship="viewControllers" id="5gY-XE-MGY"/>
-                        <segue destination="24a-I9-E4s" kind="relationship" relationship="viewControllers" id="KzZ-Xn-9WE"/>
+                        <segue destination="gZ8-gf-ks1" kind="relationship" relationship="viewControllers" id="KzZ-Xn-9WE"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="-412" y="314"/>
         </scene>
-        <!--Users View Controller - Users-->
+        <!--Users View Controller-->
         <scene sceneID="aiV-z6-lxb">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr3-CO-mKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UDE-YE-q4a" customClass="UsersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l8P-9K-RrO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="855-1P-ztK" userLabel="UserViewController">
-                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -44,27 +44,22 @@
                                     <outlet property="delegate" destination="UDE-YE-q4a" id="MFv-Af-Hkd"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Chn-5j-agl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Refresh" id="aGZ-QO-oOA">
-                                        <connections>
-                                            <action selector="refresh:" destination="UDE-YE-q4a" id="QAE-bM-N4d"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Users" id="MKg-pN-Thf"/>
+                    <navigationItem key="navigationItem" id="Pg8-X1-JYt">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="qfk-sK-ePY">
+                            <connections>
+                                <action selector="refresh:" destination="UDE-YE-q4a" id="fRC-o5-EUB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="855-1P-ztK" id="Q7P-2A-tJe"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="191" y="149"/>
+            <point key="canvasLocation" x="717" y="149"/>
         </scene>
         <!--Topics View Controller-->
         <scene sceneID="ho1-jT-mK0">
@@ -117,17 +112,17 @@
             </objects>
             <point key="canvasLocation" x="1312" y="782"/>
         </scene>
-        <!--Nodes View Controller - Nodes-->
+        <!--Nodes View Controller-->
         <scene sceneID="Oii-Pr-106">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwP-Sr-sDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="24a-I9-E4s" customClass="NodesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9s-QT-SnU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pAH-A9-9r9">
-                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -135,27 +130,22 @@
                                     <outlet property="delegate" destination="24a-I9-E4s" id="Kct-S1-y3F"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="JRh-VX-II0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Refresh" id="myu-Nv-oUC">
-                                        <connections>
-                                            <action selector="refresh:" destination="24a-I9-E4s" id="ed4-XH-hyD"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nodes" id="K4i-lq-xwO"/>
+                    <navigationItem key="navigationItem" id="ljX-Je-Fbq">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="7vN-tW-Ily">
+                            <connections>
+                                <action selector="refresh:" destination="24a-I9-E4s" id="2Va-XT-s7O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="pAH-A9-9r9" id="nOg-dz-HiY"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="192" y="1363"/>
+            <point key="canvasLocation" x="718" y="1363"/>
         </scene>
         <!--Navigation Controller - Topics-->
         <scene sceneID="uKD-3e-M54">
@@ -175,6 +165,44 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="191" y="771"/>
+        </scene>
+        <!--Navigation Controller - Users-->
+        <scene sceneID="5JK-Hl-h2y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdL-8k-6Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="45a-ek-Kg9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Users" id="MKg-pN-Thf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DKe-p1-Qwg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UDE-YE-q4a" kind="relationship" relationship="rootViewController" id="AKw-sg-Eou"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="191" y="149"/>
+        </scene>
+        <!--Navigation Controller - Nodes-->
+        <scene sceneID="fRK-3F-8rI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tcf-9Q-PDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="gZ8-gf-ks1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Nodes" id="K4i-lq-xwO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NrB-Rm-UOF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="24a-I9-E4s" kind="relationship" relationship="rootViewController" id="WIZ-oB-Pb2"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="192" y="1363"/>
         </scene>
     </scenes>
     <classes>
