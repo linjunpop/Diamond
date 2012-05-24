@@ -81,6 +81,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showTopicDetails" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showTopicDetails"]) {
+//        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+//        UIViewController *topicDetailViewController = [segue destinationViewController];
+//        topicDetailViewController.htmlString = @"<h1>HI</h1>";
+    }
 }
 
 - (IBAction)refresh:(id)sender {

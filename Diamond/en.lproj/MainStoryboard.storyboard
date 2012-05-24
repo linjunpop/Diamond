@@ -19,7 +19,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="UDE-YE-q4a" kind="relationship" relationship="viewControllers" id="Tcm-n8-oL9"/>
-                        <segue destination="bC9-zh-NeD" kind="relationship" relationship="viewControllers" id="5gY-XE-MGY"/>
+                        <segue destination="9C8-CS-4nj" kind="relationship" relationship="viewControllers" id="5gY-XE-MGY"/>
                         <segue destination="24a-I9-E4s" kind="relationship" relationship="viewControllers" id="KzZ-Xn-9WE"/>
                     </connections>
                 </tabBarController>
@@ -66,17 +66,17 @@
             </objects>
             <point key="canvasLocation" x="191" y="149"/>
         </scene>
-        <!--Topics View Controller - Topics-->
+        <!--Topics View Controller-->
         <scene sceneID="ho1-jT-mK0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgT-5c-yOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bC9-zh-NeD" customClass="TopicsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zbF-GO-dwn">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QTo-z6-vI4">
-                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -84,27 +84,38 @@
                                     <outlet property="delegate" destination="bC9-zh-NeD" id="f1n-7a-Ewu"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="aE4-eK-M10">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Refresh" id="RRa-C9-URd">
-                                        <connections>
-                                            <action selector="refresh:" destination="bC9-zh-NeD" id="Zva-HY-WKW"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Topics" id="0CT-aE-qsM"/>
+                    <navigationItem key="navigationItem" id="IZ9-TJ-Yr6">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="ZU6-7i-FPp">
+                            <connections>
+                                <action selector="refresh:" destination="bC9-zh-NeD" id="04T-ic-ubD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="QTo-z6-vI4" id="DUS-jf-Zgc"/>
+                        <segue destination="Xqc-lU-QeE" kind="push" identifier="showTopicDetails" id="WsX-hh-Zcf"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="191" y="771"/>
+            <point key="canvasLocation" x="717" y="771"/>
+        </scene>
+        <!--Topic Details View Controller-->
+        <scene sceneID="3Ph-Rr-XyQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wnc-Kn-R8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Xqc-lU-QeE" customClass="TopicDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2X6-oA-nD8">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xk9-AD-ND9"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1312" y="782"/>
         </scene>
         <!--Nodes View Controller - Nodes-->
         <scene sceneID="Oii-Pr-106">
@@ -146,21 +157,49 @@
             </objects>
             <point key="canvasLocation" x="192" y="1363"/>
         </scene>
-        <!--Topic Detail View Controller-->
-        <scene sceneID="neE-di-V4P">
+        <!--Navigation Controller - Topics-->
+        <scene sceneID="uKD-3e-M54">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgc-a1-48M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="OR6-01-NYw" customClass="TopicDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1C9-ic-n20">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLZ-qf-UbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="9C8-CS-4nj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Topics" id="0CT-aE-qsM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yEL-Dj-6yv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bC9-zh-NeD" kind="relationship" relationship="rootViewController" id="TeH-8e-naq"/>
+                    </connections>
+                </navigationController>
             </objects>
-            <point key="canvasLocation" x="541" y="1233"/>
+            <point key="canvasLocation" x="191" y="771"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NodesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NodesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="TopicDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopicDetailsViewController.h"/>
+        </class>
+        <class className="TopicsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopicsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UsersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UsersViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

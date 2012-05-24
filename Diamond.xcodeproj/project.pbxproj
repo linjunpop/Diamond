@@ -25,6 +25,7 @@
 		5D21E618156B6E9E00A0D042 /* DiamondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E617156B6E9E00A0D042 /* DiamondTests.m */; };
 		5D21E62C156B86EA00A0D042 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E62B156B86EA00A0D042 /* UsersViewController.m */; };
 		5D602F4B156C720800135F5A /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D602F4A156C720800135F5A /* TopicsViewController.m */; };
+		5DCC47B0156DB44B00C8ABB5 /* TopicDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */; };
 		5DFA45A8156C9ADC002059D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45A7156C9ADC002059D9 /* UserModel.m */; };
 		5DFA45AC156CB58B002059D9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AB156CB58B002059D9 /* TopicModel.m */; };
 		5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AE156CB919002059D9 /* NodesViewController.m */; };
@@ -63,15 +64,17 @@
 		5D21E614156B6E9E00A0D042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D21E616156B6E9E00A0D042 /* DiamondTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiamondTests.h; sourceTree = "<group>"; };
 		5D21E617156B6E9E00A0D042 /* DiamondTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondTests.m; sourceTree = "<group>"; };
-		5D21E62A156B86EA00A0D042 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UsersViewController.h; sourceTree = "<group>"; };
+		5D21E62A156B86EA00A0D042 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		5D21E62B156B86EA00A0D042 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
-		5D602F49156C720800135F5A /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TopicsViewController.h; sourceTree = "<group>"; };
+		5D602F49156C720800135F5A /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		5D602F4A156C720800135F5A /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
+		5DCC47AE156DB44B00C8ABB5 /* TopicDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicDetailsViewController.h; path = ../TopicDetailsViewController.h; sourceTree = "<group>"; };
+		5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicDetailsViewController.m; path = ../TopicDetailsViewController.m; sourceTree = "<group>"; };
 		5DFA45A6156C9ADC002059D9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		5DFA45A7156C9ADC002059D9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		5DFA45AA156CB58B002059D9 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		5DFA45AB156CB58B002059D9 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
-		5DFA45AD156CB919002059D9 /* NodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NodesViewController.h; sourceTree = "<group>"; };
+		5DFA45AD156CB919002059D9 /* NodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodesViewController.h; sourceTree = "<group>"; };
 		5DFA45AE156CB919002059D9 /* NodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodesViewController.m; sourceTree = "<group>"; };
 		5DFA45B0156CBA36002059D9 /* NodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeModel.h; sourceTree = "<group>"; };
 		5DFA45B1156CBA36002059D9 /* NodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeModel.m; sourceTree = "<group>"; };
@@ -134,21 +137,10 @@
 		5D21E5E7156B6E9D00A0D042 /* Diamond */ = {
 			isa = PBXGroup;
 			children = (
-				5D21E5F0156B6E9D00A0D042 /* AppDelegate.h */,
-				5D21E5F1156B6E9D00A0D042 /* AppDelegate.m */,
+				5DC259FB156D16CA007A5B2C /* Classes */,
 				5D21E5F3156B6E9D00A0D042 /* MainStoryboard.storyboard */,
-				5D21E5F9156B6E9D00A0D042 /* first.png */,
-				5D21E5FB156B6E9D00A0D042 /* first@2x.png */,
-				5D21E600156B6E9D00A0D042 /* second.png */,
-				5D21E602156B6E9D00A0D042 /* second@2x.png */,
+				5DC259FA156D15B9007A5B2C /* Resources */,
 				5D21E5E8156B6E9D00A0D042 /* Supporting Files */,
-				5DBEAD71156CCD0C003B639C /* Controllers */,
-				5DFA45A6156C9ADC002059D9 /* UserModel.h */,
-				5DFA45A7156C9ADC002059D9 /* UserModel.m */,
-				5DFA45AA156CB58B002059D9 /* TopicModel.h */,
-				5DFA45AB156CB58B002059D9 /* TopicModel.m */,
-				5DFA45B0156CBA36002059D9 /* NodeModel.h */,
-				5DFA45B1156CBA36002059D9 /* NodeModel.m */,
 			);
 			path = Diamond;
 			sourceTree = "<group>";
@@ -186,6 +178,8 @@
 		5DBEAD71156CCD0C003B639C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5DCC47AE156DB44B00C8ABB5 /* TopicDetailsViewController.h */,
+				5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */,
 				5D21E62A156B86EA00A0D042 /* UsersViewController.h */,
 				5D21E62B156B86EA00A0D042 /* UsersViewController.m */,
 				5D602F49156C720800135F5A /* TopicsViewController.h */,
@@ -194,6 +188,41 @@
 				5DFA45AE156CB919002059D9 /* NodesViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5DC259F8156D1585007A5B2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5DFA45A6156C9ADC002059D9 /* UserModel.h */,
+				5DFA45A7156C9ADC002059D9 /* UserModel.m */,
+				5DFA45AA156CB58B002059D9 /* TopicModel.h */,
+				5DFA45AB156CB58B002059D9 /* TopicModel.m */,
+				5DFA45B0156CBA36002059D9 /* NodeModel.h */,
+				5DFA45B1156CBA36002059D9 /* NodeModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5DC259FA156D15B9007A5B2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D21E5F9156B6E9D00A0D042 /* first.png */,
+				5D21E5FB156B6E9D00A0D042 /* first@2x.png */,
+				5D21E600156B6E9D00A0D042 /* second.png */,
+				5D21E602156B6E9D00A0D042 /* second@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5DC259FB156D16CA007A5B2C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5D21E5F0156B6E9D00A0D042 /* AppDelegate.h */,
+				5D21E5F1156B6E9D00A0D042 /* AppDelegate.m */,
+				5DC259F8156D1585007A5B2C /* Models */,
+				5DBEAD71156CCD0C003B639C /* Controllers */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +343,7 @@
 				5DFA45AC156CB58B002059D9 /* TopicModel.m in Sources */,
 				5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */,
 				5DFA45B2156CBA36002059D9 /* NodeModel.m in Sources */,
+				5DCC47B0156DB44B00C8ABB5 /* TopicDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
