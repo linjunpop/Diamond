@@ -24,8 +24,8 @@
 		5D21E615156B6E9E00A0D042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D21E613156B6E9E00A0D042 /* InfoPlist.strings */; };
 		5D21E618156B6E9E00A0D042 /* DiamondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E617156B6E9E00A0D042 /* DiamondTests.m */; };
 		5D21E62C156B86EA00A0D042 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E62B156B86EA00A0D042 /* UsersViewController.m */; };
+		5D5826AE156E1FA40090607E /* TopicDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */; };
 		5D602F4B156C720800135F5A /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D602F4A156C720800135F5A /* TopicsViewController.m */; };
-		5DCC47B0156DB44B00C8ABB5 /* TopicDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */; };
 		5DFA45A8156C9ADC002059D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45A7156C9ADC002059D9 /* UserModel.m */; };
 		5DFA45AC156CB58B002059D9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AB156CB58B002059D9 /* TopicModel.m */; };
 		5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AE156CB919002059D9 /* NodesViewController.m */; };
@@ -66,10 +66,10 @@
 		5D21E617156B6E9E00A0D042 /* DiamondTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondTests.m; sourceTree = "<group>"; };
 		5D21E62A156B86EA00A0D042 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		5D21E62B156B86EA00A0D042 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		5D5826AC156E1FA40090607E /* TopicDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailsViewController.h; sourceTree = "<group>"; };
+		5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailsViewController.m; sourceTree = "<group>"; };
 		5D602F49156C720800135F5A /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		5D602F4A156C720800135F5A /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
-		5DCC47AE156DB44B00C8ABB5 /* TopicDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicDetailsViewController.h; path = ../TopicDetailsViewController.h; sourceTree = "<group>"; };
-		5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicDetailsViewController.m; path = ../TopicDetailsViewController.m; sourceTree = "<group>"; };
 		5DFA45A6156C9ADC002059D9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		5DFA45A7156C9ADC002059D9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		5DFA45AA156CB58B002059D9 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 		5DBEAD71156CCD0C003B639C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5DCC47AE156DB44B00C8ABB5 /* TopicDetailsViewController.h */,
-				5DCC47AF156DB44B00C8ABB5 /* TopicDetailsViewController.m */,
+				5D5826AC156E1FA40090607E /* TopicDetailsViewController.h */,
+				5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */,
 				5D21E62A156B86EA00A0D042 /* UsersViewController.h */,
 				5D21E62B156B86EA00A0D042 /* UsersViewController.m */,
 				5D602F49156C720800135F5A /* TopicsViewController.h */,
@@ -343,7 +343,7 @@
 				5DFA45AC156CB58B002059D9 /* TopicModel.m in Sources */,
 				5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */,
 				5DFA45B2156CBA36002059D9 /* NodeModel.m in Sources */,
-				5DCC47B0156DB44B00C8ABB5 /* TopicDetailsViewController.m in Sources */,
+				5D5826AE156E1FA40090607E /* TopicDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
