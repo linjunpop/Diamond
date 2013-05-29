@@ -19,9 +19,6 @@
 
 @implementation TopicsViewController
 
-@synthesize tableView = _tableView;
-@synthesize topics = _topics;
-
 #pragma mark View Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -75,10 +72,10 @@
     
     NSDictionary *topicInfo = [self.topics objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [topicInfo objectForKey:@"title"];
+    cell.textLabel.text = topicInfo[@"title"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"User: %@ -- Node: %@",
-                                 [[topicInfo objectForKey:@"user"] objectForKey:@"login"],
-                                 [topicInfo objectForKey:@"node_name"]];
+                                 topicInfo[@"user"][@"login"],
+                                 topicInfo[@"node_name"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;

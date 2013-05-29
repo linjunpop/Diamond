@@ -13,8 +13,6 @@
 @end
 
 @implementation TopicDetailsViewController
-@synthesize textView = _textView;
-@synthesize bodyText = _bodyText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -18,9 +18,6 @@
 
 @implementation NodesViewController
 
-@synthesize tableView = _tableView;
-@synthesize nodes = _nodes;
-
 #pragma mark View Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

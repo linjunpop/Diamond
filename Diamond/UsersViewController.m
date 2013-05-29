@@ -18,9 +18,6 @@
 
 @implementation UsersViewController
 
-@synthesize tableView = _tableView;
-@synthesize users = _users;
-
 #pragma mark - View Lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
