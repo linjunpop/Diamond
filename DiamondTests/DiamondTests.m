@@ -2,11 +2,12 @@
 //  DiamondTests.m
 //  DiamondTests
 //
-//  Created by Jun Lin on 5/22/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Jun Lin on 5/30/13.
+//
 //
 
 #import "DiamondTests.h"
+#import "Specta.h"
 
 @implementation DiamondTests
 

@@ -1,6 +1,6 @@
 //
-//  DiamondTests.h
-//  DiamondTests
+//  TestHelper.h
+//  Diamond
 //
 //  Created by Jun Lin on 5/30/13.
 //
@@ -8,6 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface DiamondTests : SenTestCase
+#import "Specta.h"
 
-@end
+#define EXP_SHORTHAND
+#import "Expecta.h"
