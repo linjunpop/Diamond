@@ -1,6 +1,11 @@
-# Diamond
+# Diamond :diamonds:
 
 A ruby-china iOS client.
 
-Just for for Learning iOS Programming.
+## Run Tests
+
+```bash
+$ pod install
+$ rake
+```
 
