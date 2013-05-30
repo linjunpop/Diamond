@@ -17,6 +17,8 @@
 		5D21E5F2156B6E9D00A0D042 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E5F1156B6E9D00A0D042 /* AppDelegate.m */; };
 		5D21E5F5156B6E9D00A0D042 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D21E5F3156B6E9D00A0D042 /* MainStoryboard.storyboard */; };
 		5D21E62C156B86EA00A0D042 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D21E62B156B86EA00A0D042 /* UsersViewController.m */; };
+		5D247516175789AD00C5BFC9 /* TopicModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D247515175789AD00C5BFC9 /* TopicModelSpec.m */; };
+		5D24751917578A0D00C5BFC9 /* NodeModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D24751817578A0D00C5BFC9 /* NodeModelSpec.m */; };
 		5D425DBF156E92B400217F70 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D425DBD156E92B400217F70 /* Icon.png */; };
 		5D425DC0156E92B400217F70 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D425DBE156E92B400217F70 /* Icon@2x.png */; };
 		5D5634C91756FBF10069D13B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D21E60A156B6E9E00A0D042 /* SenTestingKit.framework */; };
@@ -61,6 +63,8 @@
 		5D21E60A156B6E9E00A0D042 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5D21E62A156B86EA00A0D042 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		5D21E62B156B86EA00A0D042 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		5D247515175789AD00C5BFC9 /* TopicModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModelSpec.m; sourceTree = "<group>"; };
+		5D24751817578A0D00C5BFC9 /* NodeModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeModelSpec.m; sourceTree = "<group>"; };
 		5D425DBD156E92B400217F70 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5D425DBE156E92B400217F70 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		5D5634C81756FBF10069D13B /* DiamondTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiamondTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				5D5634DB1756FC890069D13B /* UserModelSpec.m */,
+				5D247515175789AD00C5BFC9 /* TopicModelSpec.m */,
+				5D24751817578A0D00C5BFC9 /* NodeModelSpec.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -398,6 +404,8 @@
 			files = (
 				5D5634DC1756FC890069D13B /* UserModelSpec.m in Sources */,
 				5D03AA5D1756FEAB00F4AF1F /* TestHelper.m in Sources */,
+				5D247516175789AD00C5BFC9 /* TopicModelSpec.m in Sources */,
+				5D24751917578A0D00C5BFC9 /* NodeModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
