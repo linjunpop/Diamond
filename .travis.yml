@@ -1,5 +1,7 @@
 language: objective-c
 
-before_script: scripts/travis/before_script.sh
-script: scripts/travis/script.sh
+before_install:
+  - brew update
+  - brew install xctool --HEAD
+script: rake test
 
