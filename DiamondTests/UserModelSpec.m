@@ -14,10 +14,9 @@ SpecBegin(UserModel)
 describe(@"UserModel", ^{
     describe(@".all", ^{
         it(@"load all users", ^{
-            expect(@"foo").to.beNil();
+            expect([UserModel all]).toNot.beEmpty();
         });
     });
 });
 
 SpecEnd
-

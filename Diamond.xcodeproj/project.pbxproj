@@ -23,7 +23,6 @@
 		5D5634CA1756FBF10069D13B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D21E5E1156B6E9D00A0D042 /* UIKit.framework */; };
 		5D5634CB1756FBF10069D13B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D21E5E3156B6E9D00A0D042 /* Foundation.framework */; };
 		5D5634D11756FBF10069D13B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D5634CF1756FBF10069D13B /* InfoPlist.strings */; };
-		5D5634D41756FBF10069D13B /* DiamondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5634D31756FBF10069D13B /* DiamondTests.m */; };
 		5D5634DC1756FC890069D13B /* UserModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5634DB1756FC890069D13B /* UserModelSpec.m */; };
 		5D5826AE156E1FA40090607E /* TopicDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */; };
 		5D602F4B156C720800135F5A /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D602F4A156C720800135F5A /* TopicsViewController.m */; };
@@ -32,6 +31,16 @@
 		5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AE156CB919002059D9 /* NodesViewController.m */; };
 		5DFA45B2156CBA36002059D9 /* NodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45B1156CBA36002059D9 /* NodeModel.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D03AA6017570AEF00F4AF1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D21E5D4156B6E9D00A0D042 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D21E5DC156B6E9D00A0D042;
+			remoteInfo = Diamond;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2167290244C74396BFA6BAAD /* Pods-DiamondTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiamondTests.xcconfig"; path = "Pods/Pods-DiamondTests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -57,8 +66,6 @@
 		5D5634C81756FBF10069D13B /* DiamondTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiamondTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5634CE1756FBF10069D13B /* DiamondTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiamondTests-Info.plist"; sourceTree = "<group>"; };
 		5D5634D01756FBF10069D13B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5D5634D21756FBF10069D13B /* DiamondTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiamondTests.h; sourceTree = "<group>"; };
-		5D5634D31756FBF10069D13B /* DiamondTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondTests.m; sourceTree = "<group>"; };
 		5D5634D51756FBF10069D13B /* DiamondTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiamondTests-Prefix.pch"; sourceTree = "<group>"; };
 		5D5634DB1756FC890069D13B /* UserModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModelSpec.m; sourceTree = "<group>"; };
 		5D5826AC156E1FA40090607E /* TopicDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailsViewController.h; sourceTree = "<group>"; };
@@ -162,8 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				5D5634D91756FC6D0069D13B /* Models */,
-				5D5634D21756FBF10069D13B /* DiamondTests.h */,
-				5D5634D31756FBF10069D13B /* DiamondTests.m */,
 				5D5634CD1756FBF10069D13B /* Supporting Files */,
 				5D03AA5B1756FEAB00F4AF1F /* TestHelper.h */,
 				5D03AA5C1756FEAB00F4AF1F /* TestHelper.m */,
@@ -271,6 +276,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5D03AA6117570AEF00F4AF1F /* PBXTargetDependency */,
 			);
 			name = DiamondTests;
 			productName = DiamondTests;
@@ -390,13 +396,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5634D41756FBF10069D13B /* DiamondTests.m in Sources */,
 				5D5634DC1756FC890069D13B /* UserModelSpec.m in Sources */,
 				5D03AA5D1756FEAB00F4AF1F /* TestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D03AA6117570AEF00F4AF1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D21E5DC156B6E9D00A0D042 /* Diamond */;
+			targetProxy = 5D03AA6017570AEF00F4AF1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5D21E5EA156B6E9D00A0D042 /* InfoPlist.strings */ = {
@@ -497,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4EE263571004AC8ADA69308 /* Pods-DiamondTests.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Diamond.app/Diamond";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -511,6 +525,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -519,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4EE263571004AC8ADA69308 /* Pods-DiamondTests.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Diamond.app/Diamond";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -532,6 +548,7 @@
 				INFOPLIST_FILE = "DiamondTests/DiamondTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
