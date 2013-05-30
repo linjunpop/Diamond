@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0460"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "NO"
@@ -13,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4177FD22F65D4CE1A9B6C87E"
+               BlueprintIdentifier = "9F4463DE7B2A451C8A43EF4E"
                BuildableName = "libPods-DiamondTests.a"
                BlueprintName = "Pods-DiamondTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -22,20 +23,6 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D21E5DC156B6E9D00A0D042"
-               BuildableName = "Diamond.app"
-               BlueprintName = "Diamond"
-               ReferencedContainer = "container:Diamond.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
@@ -66,15 +53,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D21E5DC156B6E9D00A0D042"
-            BuildableName = "Diamond.app"
-            BlueprintName = "Diamond"
-            ReferencedContainer = "container:Diamond.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -85,15 +63,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D21E5DC156B6E9D00A0D042"
-            BuildableName = "Diamond.app"
-            BlueprintName = "Diamond"
-            ReferencedContainer = "container:Diamond.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -103,15 +72,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D21E5DC156B6E9D00A0D042"
-            BuildableName = "Diamond.app"
-            BlueprintName = "Diamond"
-            ReferencedContainer = "container:Diamond.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
