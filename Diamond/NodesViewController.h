@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "MBProgressHUD.h"
+
 #import "NodeModel.h"
 
 @interface NodesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

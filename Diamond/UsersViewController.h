@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "MBProgressHUD.h"
+
 #import "UserModel.h"
 
 @interface UsersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

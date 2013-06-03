@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "MBProgressHUD.h"
+
 #import "TopicModel.h"
 
 @interface TopicsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

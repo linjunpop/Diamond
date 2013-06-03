@@ -81,6 +81,7 @@
 #pragma mark - Private Methods
 
 - (void)reloadUsers {
+    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setUsers:[UserModel all]];
         
@@ -88,6 +89,7 @@
             // Add code here to update the UI/send notifications based on the
             // results of the background processing
             if ([self users]) {
+                [MBProgressHUD hideHUDForView:self.tableView animated:YES];
                 [self.tableView reloadData];
             }
         });

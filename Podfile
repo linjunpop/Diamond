@@ -1,4 +1,7 @@
 platform :ios
+
+pod 'MBProgressHUD', '~> 0.6'
+
 target :DiamondTests, :exclusive => true do
   pod 'Specta', '~> 0.1.8'
   pod 'Expecta', '~> 0.2.1'
