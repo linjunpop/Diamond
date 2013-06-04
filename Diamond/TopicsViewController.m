@@ -13,7 +13,7 @@
 
 @property (nonatomic) NSMutableArray *topics;
 
-- (void)reloadTopics;
+- (void) addRefreshControl;
 
 @end
 
@@ -33,8 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self reloadTopics];
+    [self addRefreshControl];
 }
 
 - (void)viewDidUnload
@@ -95,26 +94,26 @@
     }
 }
 
-- (IBAction)refresh:(id)sender {
-    [self reloadTopics];
+# pragma mark - Refresh Control
+
+- (void)addRefreshControl {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
-#pragma mark - Private Methods
-
-- (void) reloadTopics {
-    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+- (void)refresh:(UIRefreshControl *)refreshControl {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setTopics:[TopicModel all]];
-        
+
         dispatch_async( dispatch_get_main_queue(), ^{
             // Add code here to update the UI/send notifications based on the
             // results of the background processing
             if ([self topics]) {
-                [MBProgressHUD hideHUDForView:self.tableView animated:YES];
                 [self.tableView reloadData];
             }
+            [refreshControl endRefreshing];
         });
     });
 }
-
 @end

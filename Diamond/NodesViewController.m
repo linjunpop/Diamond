@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSMutableArray *nodes;
 
-- (void)reloadNodes;
+- (void) addRefreshControl;
 
 @end
 
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self reloadNodes];
+    [self addRefreshControl];
 }
 
 - (void)viewDidUnload
@@ -74,24 +74,25 @@
     return cell;
 }
 
-- (IBAction)refresh:(id)sender {
-    [self reloadNodes];
+# pragma mark - Refresh Control
+
+- (void)addRefreshControl {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
-#pragma mark - Private Methods
-
-- (void) reloadNodes {
-    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+- (void)refresh:(UIRefreshControl *)refreshControl {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setNodes:[NodeModel all]];
-        
+
         dispatch_async( dispatch_get_main_queue(), ^{
             // Add code here to update the UI/send notifications based on the
             // results of the background processing
             if ([self nodes]) {
-                [MBProgressHUD hideHUDForView:self.tableView animated:YES];
                 [self.tableView reloadData];
             }
+            [refreshControl endRefreshing];
         });
     });
 }

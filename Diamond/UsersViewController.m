@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSMutableArray *users;
 
-- (void)reloadUsers;
+- (void) addRefreshControl;
 
 @end
 
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self reloadUsers];
+    [self addRefreshControl];
 }
 
 - (void)viewDidUnload
@@ -74,14 +74,15 @@
     return cell;
 }
 
-- (IBAction)refresh:(id)sender {
-    [self reloadUsers];
+# pragma mark - Refresh Control
+
+- (void)addRefreshControl {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
-#pragma mark - Private Methods
-
-- (void)reloadUsers {
-    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+- (void)refresh:(UIRefreshControl *)refreshControl {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self setUsers:[UserModel all]];
         
@@ -89,9 +90,9 @@
             // Add code here to update the UI/send notifications based on the
             // results of the background processing
             if ([self users]) {
-                [MBProgressHUD hideHUDForView:self.tableView animated:YES];
                 [self.tableView reloadData];
             }
+            [refreshControl endRefreshing];
         });
     });
 }
