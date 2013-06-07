@@ -29,7 +29,8 @@
         @"id": @"id",
         @"title": @"title",
         @"user.login": @"userLoginName",
-        @"node_name": @"nodeName"
+        @"node_name": @"nodeName",
+        @"body_html": @"bodyHtml",
      }];
     [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:topicMapping
                                                                            pathPattern:nil

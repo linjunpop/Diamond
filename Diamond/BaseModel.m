@@ -32,4 +32,18 @@
                                               }];
 }
 
++ (void)findOneById:(NSNumber *)id usingBlock:(void (^)(id, NSError *))block {
+    [[RKObjectManager sharedManager] getObjectsAtPath:[NSString stringWithFormat:@"%@/%@.json", [self.resourceName pluralizedString], id] parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  BaseModel *result = [mappingResult firstObject];
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      block(result, nil);
+                                                  });
+                                              } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      block(nil, error);
+                                                  });
+                                              }];
+}
+
 @end

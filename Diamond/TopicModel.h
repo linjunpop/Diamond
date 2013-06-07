@@ -15,5 +15,6 @@
 @property NSString *title;
 @property NSString *userLoginName;
 @property NSString *nodeName;
+@property NSString *bodyHtml;
 
 @end

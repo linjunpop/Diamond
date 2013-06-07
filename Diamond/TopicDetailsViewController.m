@@ -9,9 +9,7 @@
 #import "TopicDetailsViewController.h"
 
 @interface TopicDetailsViewController ()
-@property (strong, nonatomic) NSDictionary *topic;
 - (void)displayTopic;
-- (void)loadTopic;
 @end
 
 @implementation TopicDetailsViewController
@@ -47,37 +45,13 @@
 
 - (void)displayTopic {
     [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
-
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-
-        [self loadTopic];
-
-        dispatch_async( dispatch_get_main_queue(), ^{
-            // Add code here to update the UI/send notifications based on the
-            // results of the background processing
-            [[self webView] loadHTMLString:self.topic[@"body_html"] baseURL:nil];
-            [[self navigationItem] setTitle:self.topic[@"title"]];
-            [MBProgressHUD hideHUDForView:self.webView animated:YES];
-        });
-    });
-}
-
-# pragma mark - Load Data
-
-- (void) loadTopic {
-    NSString* strUrl=[NSString stringWithFormat:@"http://ruby-china.org/api/topics/%@.json", self.topicID];
-
-    NSURL *url=[NSURL URLWithString:strUrl];
-    NSMutableURLRequest  *request=[[NSMutableURLRequest alloc] initWithURL:url];
-    NSError *err=nil;
-    NSData *jsonData=[NSURLConnection sendSynchronousRequest:request
-                                           returningResponse:nil
-                                                       error:&err];
-
-    NSError *e = nil;
-    self.topic = [NSJSONSerialization JSONObjectWithData: jsonData
-                                                          options: NSJSONReadingMutableContainers
-                                                            error: &e];
+    [TopicModel findOneById:self.topicID usingBlock:^(TopicModel *topic, NSError *error) {
+        if (!error) {
+            [[self webView] loadHTMLString:topic.bodyHtml baseURL:nil];
+            [[self navigationItem] setTitle:topic.title];
+        }
+        [MBProgressHUD hideHUDForView:self.webView animated:YES];
+    }];
 }
 
 @end
