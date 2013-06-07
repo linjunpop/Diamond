@@ -11,7 +11,7 @@
 
 @interface TopicDetailsViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) NSNumber *topicID;
 
 @end

@@ -29,13 +29,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [[self textView] setEditable:NO];
     [self displayTopic];
 }
 
 - (void)viewDidUnload
 {
-    [self setTextView:nil];
+    [self setWebView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -47,7 +46,7 @@
 
 
 - (void)displayTopic {
-    [MBProgressHUD showHUDAddedTo:self.textView animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
 
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
@@ -56,9 +55,9 @@
         dispatch_async( dispatch_get_main_queue(), ^{
             // Add code here to update the UI/send notifications based on the
             // results of the background processing
-            [[self textView] setText:self.topic[@"body"]];
+            [[self webView] loadHTMLString:self.topic[@"body_html"] baseURL:nil];
             [[self navigationItem] setTitle:self.topic[@"title"]];
-            [MBProgressHUD hideHUDForView:self.textView animated:YES];
+            [MBProgressHUD hideHUDForView:self.webView animated:YES];
         });
     });
 }
