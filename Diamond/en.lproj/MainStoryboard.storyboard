@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-412" y="314"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Users View Controller - Users-->
         <scene sceneID="aiV-z6-lxb">
             <objects>
                 <viewController id="UDE-YE-q4a" customClass="UsersViewController" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                             <constraint firstItem="855-1P-ztK" firstAttribute="trailing" secondItem="l8P-9K-RrO" secondAttribute="trailing" type="default" id="y7u-TR-wJN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Pg8-X1-JYt"/>
+                    <navigationItem key="navigationItem" title="Users" id="Pg8-X1-JYt"/>
                     <connections>
                         <outlet property="tableView" destination="855-1P-ztK" id="Q7P-2A-tJe"/>
                     </connections>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="718" y="-56"/>
         </scene>
-        <!--Topics View Controller-->
+        <!--Topics View Controller - Topics-->
         <scene sceneID="ho1-jT-mK0">
             <objects>
                 <viewController id="bC9-zh-NeD" customClass="TopicsViewController" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                             <constraint firstItem="QTo-z6-vI4" firstAttribute="trailing" secondItem="zbF-GO-dwn" secondAttribute="trailing" type="default" id="JIG-1M-K7C"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IZ9-TJ-Yr6"/>
+                    <navigationItem key="navigationItem" title="Topics" id="IZ9-TJ-Yr6"/>
                     <connections>
                         <outlet property="tableView" destination="QTo-z6-vI4" id="DUS-jf-Zgc"/>
                         <segue destination="Xqc-lU-QeE" kind="push" identifier="showTopicDetails" id="WsX-hh-Zcf"/>
@@ -128,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="1312" y="782"/>
         </scene>
-        <!--Nodes View Controller-->
+        <!--Nodes View Controller - Nodes-->
         <scene sceneID="Oii-Pr-106">
             <objects>
                 <viewController id="24a-I9-E4s" customClass="NodesViewController" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                             <constraint firstItem="pAH-A9-9r9" firstAttribute="top" secondItem="O9s-QT-SnU" secondAttribute="top" type="default" id="ozX-eG-yYz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ljX-Je-Fbq"/>
+                    <navigationItem key="navigationItem" title="Nodes" id="ljX-Je-Fbq"/>
                     <connections>
                         <outlet property="tableView" destination="pAH-A9-9r9" id="nOg-dz-HiY"/>
                     </connections>
