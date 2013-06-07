@@ -8,6 +8,7 @@
 
 #import "AppHelper.h"
 #import "UserModel.h"
+#import "TopicModel.h"
 
 @implementation AppHelper
 
@@ -19,6 +20,18 @@
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[UserModel class]];
     [userMapping addAttributeMappingsFromDictionary:@{ @"login": @"loginName" }];
     [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:userMapping
+                                                                           pathPattern:nil
+                                                                               keyPath:nil
+                                                                           statusCodes:nil]];
+    // Topic
+    RKObjectMapping *topicMapping = [ RKObjectMapping mappingForClass:[TopicModel class]];
+    [topicMapping addAttributeMappingsFromDictionary:@{
+        @"id": @"id",
+        @"title": @"title",
+        @"user.login": @"userLoginName",
+        @"node_name": @"nodeName"
+     }];
+    [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:topicMapping
                                                                            pathPattern:nil
                                                                                keyPath:nil
                                                                            statusCodes:nil]];

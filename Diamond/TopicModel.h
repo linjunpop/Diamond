@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface TopicModel : NSObject
+@interface TopicModel : BaseModel
 
-+ (NSMutableArray *) all;
+@property NSNumber *id;
+@property NSString *title;
+@property NSString *userLoginName;
+@property NSString *nodeName;
 
 @end

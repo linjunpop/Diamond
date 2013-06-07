@@ -11,9 +11,9 @@
 
 @interface TopicsViewController ()
 
-@property (nonatomic) NSMutableArray *topics;
+@property (nonatomic) NSArray *topics;
 
-- (void) addRefreshControl;
+- (void)addRefreshControl;
 
 @end
 
@@ -21,8 +21,7 @@
 
 #pragma mark View Lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -30,14 +29,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self addRefreshControl];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -45,13 +42,11 @@
 
 #pragma mark - UITableViewDataSource methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -60,23 +55,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(!cell) {
+
+    if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:nil];
     }
-    
-    NSDictionary *topicInfo = [self.topics objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = topicInfo[@"title"];
+
+    TopicModel *topic = [self.topics objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = topic.title;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"User: %@ -- Node: %@",
-                                 topicInfo[@"user"][@"login"],
-                                 topicInfo[@"node_name"]];
+                                 topic.userLoginName,
+                                 topic.nodeName];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+
     return cell;
 }
 
@@ -85,11 +79,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     if ([[segue identifier] isEqualToString:@"showTopicDetails"]) {
         NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        NSDictionary *topic = [self.topics objectAtIndex:selectedRowIndex.row];
-        [[segue destinationViewController] setTopicID:[topic objectForKey:@"id"]];
+        TopicModel *topic = [self.topics objectAtIndex:selectedRowIndex.row];
+        [[segue destinationViewController] setTopicID:topic.id];
     }
 }
 
@@ -102,17 +95,13 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self setTopics:[TopicModel all]];
-
-        dispatch_async( dispatch_get_main_queue(), ^{
-            // Add code here to update the UI/send notifications based on the
-            // results of the background processing
-            if ([self topics]) {
-                [self.tableView reloadData];
-            }
-            [refreshControl endRefreshing];
-        });
-    });
+    [TopicModel findAllUsingBlock:^(NSArray *topics, NSError *error) {
+        if (!error) {
+            self.topics = topics;
+            [self.tableView reloadData];
+        }
+    }];
+    [refreshControl endRefreshing];
 }
+
 @end
