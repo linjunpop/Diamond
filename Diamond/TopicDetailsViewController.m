@@ -9,7 +9,9 @@
 #import "TopicDetailsViewController.h"
 
 @interface TopicDetailsViewController ()
-
+@property (strong, nonatomic) NSDictionary *topic;
+- (void)displayTopic;
+- (void)loadTopic;
 @end
 
 @implementation TopicDetailsViewController
@@ -28,7 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[self textView] setEditable:NO];
-    [[self textView] setText:[self bodyText]];
+    [self displayTopic];
 }
 
 - (void)viewDidUnload
@@ -41,6 +43,42 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+- (void)displayTopic {
+    [MBProgressHUD showHUDAddedTo:self.textView animated:YES];
+
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        [self loadTopic];
+
+        dispatch_async( dispatch_get_main_queue(), ^{
+            // Add code here to update the UI/send notifications based on the
+            // results of the background processing
+            [[self textView] setText:self.topic[@"body"]];
+            [[self navigationItem] setTitle:self.topic[@"title"]];
+            [MBProgressHUD hideHUDForView:self.textView animated:YES];
+        });
+    });
+}
+
+# pragma mark - Load Data
+
+- (void) loadTopic {
+    NSString* strUrl=[NSString stringWithFormat:@"http://ruby-china.org/api/topics/%@.json", self.topicID];
+
+    NSURL *url=[NSURL URLWithString:strUrl];
+    NSMutableURLRequest  *request=[[NSMutableURLRequest alloc] initWithURL:url];
+    NSError *err=nil;
+    NSData *jsonData=[NSURLConnection sendSynchronousRequest:request
+                                           returningResponse:nil
+                                                       error:&err];
+
+    NSError *e = nil;
+    self.topic = [NSJSONSerialization JSONObjectWithData: jsonData
+                                                          options: NSJSONReadingMutableContainers
+                                                            error: &e];
 }
 
 @end

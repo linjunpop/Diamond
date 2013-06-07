@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface TopicDetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) NSString *bodyText;
+@property (strong, nonatomic) NSNumber *topicID;
 
 @end

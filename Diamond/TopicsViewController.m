@@ -88,9 +88,8 @@
     
     if ([[segue identifier] isEqualToString:@"showTopicDetails"]) {
         NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        NSDictionary *topicInfo = [self.topics objectAtIndex:selectedRowIndex.row];
-        TopicDetailsViewController *topicDetailViewController = [segue destinationViewController];
-        [topicDetailViewController setBodyText:[topicInfo objectForKey:@"body"]];
+        NSDictionary *topic = [self.topics objectAtIndex:selectedRowIndex.row];
+        [[segue destinationViewController] setTopicID:[topic objectForKey:@"id"]];
     }
 }
 
