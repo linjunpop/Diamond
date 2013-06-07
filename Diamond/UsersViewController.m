@@ -10,7 +10,7 @@
 
 @interface UsersViewController ()
 
-@property (nonatomic) NSMutableArray *users;
+@property (nonatomic) NSArray *users;
 
 - (void) addRefreshControl;
 
@@ -69,7 +69,7 @@
                                        reuseIdentifier:nil];
     }
     
-    cell.textLabel.text = [[self.users objectAtIndex:indexPath.row] objectForKey:@"login"];
+    cell.textLabel.text = [[self.users objectAtIndex:indexPath.row] loginName];
     
     return cell;
 }
@@ -83,18 +83,13 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self setUsers:[UserModel all]];
-        
-        dispatch_async( dispatch_get_main_queue(), ^{
-            // Add code here to update the UI/send notifications based on the
-            // results of the background processing
-            if ([self users]) {
-                [self.tableView reloadData];
-            }
-            [refreshControl endRefreshing];
-        });
-    });
+    [UserModel findAllUsingBlock:^(NSArray *users, NSError *error) {
+        if (!error) {
+            self.users = users;
+            [self.tableView reloadData];
+        }
+    }];
+    [refreshControl endRefreshing];
 }
 
 @end

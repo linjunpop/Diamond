@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppHelper.h"
 
 @implementation AppDelegate
 
@@ -15,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [AppHelper setRestMappings];
     return YES;
 }
 							

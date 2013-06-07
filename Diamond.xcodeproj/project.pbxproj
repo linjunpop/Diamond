@@ -28,6 +28,8 @@
 		5D5634DC1756FC890069D13B /* UserModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5634DB1756FC890069D13B /* UserModelSpec.m */; };
 		5D5826AE156E1FA40090607E /* TopicDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */; };
 		5D602F4B156C720800135F5A /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D602F4A156C720800135F5A /* TopicsViewController.m */; };
+		5D9B7BEC1761C8CB000072EE /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7BEB1761C8CA000072EE /* AppHelper.m */; };
+		5D9B7BF61761CD67000072EE /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7BF51761CD67000072EE /* BaseModel.m */; };
 		5DD0CA14175DE8E700A1F809 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DD0CA13175DE8E700A1F809 /* Default-568h@2x.png */; };
 		5DFA45A8156C9ADC002059D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45A7156C9ADC002059D9 /* UserModel.m */; };
 		5DFA45AC156CB58B002059D9 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA45AB156CB58B002059D9 /* TopicModel.m */; };
@@ -79,6 +81,11 @@
 		5D5826AD156E1FA40090607E /* TopicDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailsViewController.m; sourceTree = "<group>"; };
 		5D602F49156C720800135F5A /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		5D602F4A156C720800135F5A /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
+		5D9B7BEA1761C8CA000072EE /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
+		5D9B7BEB1761C8CA000072EE /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		5D9B7BF11761CB51000072EE /* RestResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestResource.h; sourceTree = "<group>"; };
+		5D9B7BF41761CD67000072EE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		5D9B7BF51761CD67000072EE /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		5DD0CA13175DE8E700A1F809 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5DFA45A6156C9ADC002059D9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		5DFA45A7156C9ADC002059D9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
@@ -208,6 +215,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		5D9B7BED1761C8CF000072EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5D9B7BEA1761C8CA000072EE /* AppHelper.h */,
+				5D9B7BEB1761C8CA000072EE /* AppHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		5D9B7BF31761CB6A000072EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5D9B7BF11761CB51000072EE /* RestResource.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		5DBEAD71156CCD0C003B639C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +256,8 @@
 				5DFA45AB156CB58B002059D9 /* TopicModel.m */,
 				5DFA45B0156CBA36002059D9 /* NodeModel.h */,
 				5DFA45B1156CBA36002059D9 /* NodeModel.m */,
+				5D9B7BF41761CD67000072EE /* BaseModel.h */,
+				5D9B7BF51761CD67000072EE /* BaseModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -253,6 +279,8 @@
 				5D21E5F1156B6E9D00A0D042 /* AppDelegate.m */,
 				5DC259F8156D1585007A5B2C /* Models */,
 				5DBEAD71156CCD0C003B639C /* Controllers */,
+				5D9B7BED1761C8CF000072EE /* Helpers */,
+				5D9B7BF31761CB6A000072EE /* Protocols */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -435,6 +463,8 @@
 				5DFA45AF156CB919002059D9 /* NodesViewController.m in Sources */,
 				5DFA45B2156CBA36002059D9 /* NodeModel.m in Sources */,
 				5D5826AE156E1FA40090607E /* TopicDetailsViewController.m in Sources */,
+				5D9B7BEC1761C8CB000072EE /* AppHelper.m in Sources */,
+				5D9B7BF61761CD67000072EE /* BaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

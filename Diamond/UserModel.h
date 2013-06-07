@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface UserModel : NSObject
+@interface UserModel : BaseModel
 
-+ (NSMutableArray *)all;
+@property NSString *loginName;
 
 @end
