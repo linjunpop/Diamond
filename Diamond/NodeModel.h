@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-@interface NodeModel : NSObject
+@interface NodeModel : BaseModel
 
-+ (NSMutableArray *) all;
+@property NSString *name;
 
 @end

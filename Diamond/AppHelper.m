@@ -9,6 +9,7 @@
 #import "AppHelper.h"
 #import "UserModel.h"
 #import "TopicModel.h"
+#import "NodeModel.h"
 
 @implementation AppHelper
 
@@ -33,6 +34,16 @@
         @"body_html": @"bodyHtml",
      }];
     [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:topicMapping
+                                                                           pathPattern:nil
+                                                                               keyPath:nil
+                                                                           statusCodes:nil]];
+
+    // Node
+    RKObjectMapping *nodeMapping = [ RKObjectMapping mappingForClass:[NodeModel class]];
+    [nodeMapping addAttributeMappingsFromDictionary:@{
+        @"name": @"name"
+     }];
+    [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:nodeMapping
                                                                            pathPattern:nil
                                                                                keyPath:nil
                                                                            statusCodes:nil]];

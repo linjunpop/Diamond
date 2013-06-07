@@ -10,7 +10,7 @@
 
 @interface NodesViewController ()
 
-@property (nonatomic) NSMutableArray *nodes;
+@property (nonatomic) NSArray *nodes;
 
 - (void) addRefreshControl;
 
@@ -69,7 +69,7 @@
                                       reuseIdentifier:nil];
     }
     
-    cell.textLabel.text = [[self.nodes objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = [[self.nodes objectAtIndex:indexPath.row] name];
     
     return cell;
 }
@@ -83,18 +83,13 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self setNodes:[NodeModel all]];
-
-        dispatch_async( dispatch_get_main_queue(), ^{
-            // Add code here to update the UI/send notifications based on the
-            // results of the background processing
-            if ([self nodes]) {
-                [self.tableView reloadData];
-            }
-            [refreshControl endRefreshing];
-        });
-    });
+    [NodeModel findAllUsingBlock:^(NSArray *nodes, NSError *error) {
+        if (!error) {
+            self.nodes = nodes;
+            [self.tableView reloadData];
+        }
+        [refreshControl endRefreshing];
+    }];
 }
 
 @end
